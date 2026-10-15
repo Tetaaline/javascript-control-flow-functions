@@ -117,3 +117,17 @@ function isPalindrome(word) {
 console.log("isPalindrome:", isPalindrome("racecar"));  // true
 console.log("isPalindrome:", isPalindrome("hello"));    // false
 console.log("isPalindrome:", isPalindrome("A"));        // true (edge case)
+
+// 10. REPEAT ACTION
+// Pseudocode: Loop from 1 to times and call the callback with each round number.
+function repeatAction(times, callback) {
+    for (let i = 1; i <= times; i++) {
+        callback(i);
+    }
+}
+console.log("repeatAction: three rounds");
+repeatAction(3, round => console.log("Round", round));
+console.log("repeatAction: one round");
+repeatAction(1, round => console.log("Round", round));
+console.log("repeatAction: zero rounds (edge case)");
+repeatAction(0, round => console.log("Round", round)); // no callback calls
