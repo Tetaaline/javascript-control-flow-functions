@@ -104,3 +104,37 @@ for (let num of numbers) {
 let average = sum / numbers.length;
 console.log("Sum:", sum);
 console.log("Average:", average);
+
+// 7. FIND THE FIRST NUMBER GREATER THAN 100
+// Pseudocode:
+// - Loop through the array values.
+// - When a value greater than 100 is found, print it and break the loop.
+let values = [25, 70, 120, 150, 200];
+for (let value of values) {
+    if (value > 100) {
+        console.log("First number greater than 100:", value);
+        break;
+    }
+}
+
+// 8. SKIP NEGATIVES
+// Pseudocode:
+// - Loop through the array.
+// - Use continue to skip values that are zero or negative.
+// - Print the remaining positive values.
+let mixedNumbers = [-5, 10, -2, 7, 0, 15];
+for (let num of mixedNumbers) {
+    if (num <= 0) {
+        continue;
+    }
+    console.log(num);
+}
+
+// 9. MULTIPLICATION TABLE
+// Pseudocode:
+// - Loop from 1 to 12.
+// - Multiply each loop number by 7 and print the formatted equation.
+for (let i = 1; i <= 12; i++) {
+    console.log(`7 x ${i} = ${7 * i}`);
+}
+
