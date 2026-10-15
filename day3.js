@@ -78,3 +78,42 @@ function max(...numbers) {
 console.log("max:", max(4, 9, 2));       // 9
 console.log("max:", max(-5, -2, -10));   // -2
 console.log("max:", max());              // undefined (edge case)
+
+// 7. CAPITALIZE
+// Pseudocode: If the word is empty, return it; otherwise uppercase the first letter and lowercase the rest.
+function capitalize(word) {
+    if (word.length === 0) {
+        return word;
+    }
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+}
+console.log("capitalize:", capitalize("kigali"));  // Kigali
+console.log("capitalize:", capitalize("RWANDA"));  // Rwanda
+console.log("capitalize:", capitalize(""));        // empty string (edge case)
+
+// 8. COUNT VOWELS
+// Pseudocode: Lowercase the text, loop over its characters, and count a/e/i/o/u.
+function countVowels(text) {
+    let count = 0;
+    const lowerText = text.toLowerCase();
+    for (let character of lowerText) {
+        if ("aeiou".includes(character)) {
+            count++;
+        }
+    }
+    return count;
+}
+console.log("countVowels:", countVowels("Kigali"));       // 3
+console.log("countVowels:", countVowels("EDUCATION"));    // 5
+console.log("countVowels:", countVowels("rhythm"));       // 0 (edge case)
+
+// 9. IS PALINDROME
+// Pseudocode: Lowercase the word, reverse its characters, and compare both strings.
+function isPalindrome(word) {
+    const lowerWord = word.toLowerCase();
+    const reversedWord = lowerWord.split("").reverse().join("");
+    return lowerWord === reversedWord;
+}
+console.log("isPalindrome:", isPalindrome("racecar"));  // true
+console.log("isPalindrome:", isPalindrome("hello"));    // false
+console.log("isPalindrome:", isPalindrome("A"));        // true (edge case)
