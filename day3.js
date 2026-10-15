@@ -131,3 +131,60 @@ console.log("repeatAction: one round");
 repeatAction(1, round => console.log("Round", round));
 console.log("repeatAction: zero rounds (edge case)");
 repeatAction(0, round => console.log("Round", round)); // no callback calls
+
+// 11. CREATE COUNTER USING A CLOSURE
+// Pseudocode: Keep value inside the outer function and return methods that can update or read it.
+function createCounter(start = 0) {
+    let value = start;
+    return {
+        increment: function () {
+            value++;
+        },
+        decrement: function () {
+            value--;
+        },
+        getValue: function () {
+            return value;
+        }
+    };
+}
+const counter1 = createCounter();
+console.log("counter default:", counter1.getValue()); // 0 (edge case/default)
+counter1.increment();
+console.log("counter increment:", counter1.getValue()); // 1
+counter1.decrement();
+console.log("counter decrement:", counter1.getValue()); // 0
+const counter2 = createCounter(10);
+console.log("counter custom start:", counter2.getValue()); // 10
+const counter3 = createCounter(-2);
+console.log("counter negative start:", counter3.getValue()); // -2 (edge case)
+
+// 12. MAKE DISCOUNT
+// Pseudocode: Receive a percentage and return a function that calculates a discounted price.
+function makeDiscount(percent) {
+    return function (price) {
+        return price - (price * percent / 100);
+    };
+}
+const discount10 = makeDiscount(10);
+const discount20 = makeDiscount(20);
+console.log("10% discount:", discount10(1000)); // 900
+console.log("20% discount:", discount20(500));  // 400
+console.log("10% discount on zero:", discount10(0)); // 0 (edge case)
+
+// SCOPE PUZZLE
+// Predictions before running:
+// - inner 3, because the let x inside the if block shadows the other x variables.
+// - function 2, because a() has its own x = 2.
+// - global 1, because the global x is unchanged.
+let x = 1;
+function a() {
+    let x = 2;
+    if (true) {
+        let x = 3;
+        console.log("inner", x);
+    }
+    console.log("function", x);
+}
+a();
+console.log("global", x);
