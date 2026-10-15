@@ -31,3 +31,52 @@ if (score < 0 || score > 100) {
 } else {
     console.log("F");
 }
+
+// 3. TICKET PRICE
+// Pseudocode:
+// - Store the person's age and student status.
+// - If older than 65, the ticket is free.
+// - Otherwise, children under 12 pay 2,000 RWF.
+// - Otherwise, students pay 3,000 RWF; other adults pay 5,000 RWF.
+let age = 20;
+let isStudent = true;
+if (age > 65) {
+    console.log("Ticket price: Free");
+} else if (age < 12) {
+    console.log("Ticket price: 2000 RWF");
+} else if (isStudent) {
+    console.log("Ticket price: 3000 RWF");
+} else {
+    console.log("Ticket price: 5000 RWF");
+}
+
+// 4. DAY PLANNER
+// Pseudocode:
+// - Store a day name.
+// - Use switch to print the activity for weekdays.
+// - Print "No class" on Saturday and Sunday.
+// - Use break to stop each case from falling through.
+let day = "Monday";
+switch (day) {
+    case "Monday":
+        console.log("HTML and CSS class");
+        break;
+    case "Tuesday":
+        console.log("Control Flow class");
+        break;
+    case "Wednesday":
+        console.log("Functions and Scope class");
+        break;
+    case "Thursday":
+        console.log("JavaScript practice");
+        break;
+    case "Friday":
+        console.log("Project work");
+        break;
+    case "Saturday":
+    case "Sunday":
+        console.log("No class");
+        break;
+    default:
+        console.log("Invalid day");
+}
