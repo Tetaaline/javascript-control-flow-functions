@@ -80,3 +80,27 @@ switch (day) {
     default:
         console.log("Invalid day");
 }
+
+// 5. COUNTDOWN
+// Pseudocode:
+// - Start at 10 and loop down to 1.
+// - Print each number.
+// - After the loop, print "Liftoff!".
+for (let i = 10; i >= 1; i--) {
+    console.log(i);
+}
+console.log("Liftoff!");
+
+// 6. SUM AND AVERAGE
+// Pseudocode:
+// - Store the numbers in an array and start sum at 0.
+// - Use for...of to add each number to sum.
+// - Divide sum by the array length to get the average.
+let numbers = [45, 78, 90, 62, 88];
+let sum = 0;
+for (let num of numbers) {
+    sum += num;
+}
+let average = sum / numbers.length;
+console.log("Sum:", sum);
+console.log("Average:", average);
